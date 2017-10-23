@@ -3,7 +3,7 @@ const Commander = require('./commands/commander.js');
 
 let commander = new Commander('./notes.json');
 
-switch (process.argv[2]){
+switch (process.argv[2].toLowerCase()){
     case 'add':
         if(argv.title && argv.body){
             commander.add(argv.title, argv.body)

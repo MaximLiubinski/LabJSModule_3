@@ -6,7 +6,7 @@ function remove(title, pathfile) {
         let file = fs.readFileSync(pathfile);
         notes = JSON.parse(file);
         notes = notes.filter( elem => elem['title'] !== title);
-        let json = JSON.stringify(notes);
+        let json = JSON.stringify(notes, null, "\t");
         fs.writeFileSync(pathfile, json);
     } else {
         console.log('Can\'t find file ' + pathfile);

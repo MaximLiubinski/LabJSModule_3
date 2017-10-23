@@ -10,7 +10,7 @@ function add(title, body, pathfile) {
         console.log("You are already have note with this title!");
     }else{
         notes.push({"title": title, "body": body});
-        let json = JSON.stringify(notes);
+        let json = JSON.stringify(notes, null, "\t");
         fs.writeFile(pathfile, json, (err) => {
             if (err) throw err;
         });
